@@ -33,7 +33,6 @@ public class LoginTests extends BaseTest {
 
 
     @Test(description = "\t\"Şifremi Unuttum\" bağlantısı ile E-Posta kullanarak şifre sıfırlama")
-    //Yarım Kaldı.
     public void epostaSifreSifirla() throws InterruptedException {
         loginPage
                 .sifremiunuttumTikla();
@@ -41,14 +40,10 @@ public class LoginTests extends BaseTest {
         loginPage
                 .sifirlanacakEpostaDoldur(email)
                 .araButonaTikla();
-                sleep(2000);
-        loginPage.baskaBirYolSecButonaTikla();
-
-
-
-
-
-
-
+        sleep(2000);
+        loginPage
+                .baskaBirYolSecButonaTikla()
+                .devamButonaTikla();
     }
+
 }

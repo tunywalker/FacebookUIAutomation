@@ -66,12 +66,20 @@ public class LoginPage extends BaseLibrary {
         screenshot();
         return this;
     }
-    @Step("Ara butonuna tıklanır")
+    @Step("Başka bir yol seç butonuna tıklanır")
     public LoginPage baskaBirYolSecButonaTikla() {
-       /* WebElement baskaBirYolDenemeLinki = driver.findElement(By.xpath("//a[@role='button' and contains(text(), 'Başka bir yol dene')]"));
+        WebElement baskaBirYolDenemeLinki = driver.findElement(By.xpath("//a[@role='button' and contains(text(), 'Başka bir yol dene')]"));
 
         baskaBirYolDenemeLinki.click();
-        screenshot();*/
+        screenshot();
+        return this;
+    }
+    @Step("Eposta ile şifre sıfırlamak için devam butonuna basılır. Ve doğrulama maili gelip gelmediği gözlemlenir.")
+    public LoginPage devamButonaTikla() {
+        WebElement devamButonu = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div[2]/form/div/div[3]/div/div[1]/button"));
+
+        devamButonu.click();
+        screenshot();
         return this;
     }
 
